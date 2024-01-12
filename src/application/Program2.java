@@ -6,6 +6,7 @@ import model.entities.Department;
 import model.entities.Seller;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -32,11 +33,17 @@ public class Program2 {
 
          */
 
-        System.out.println("\n=== TEST 5: Department update ===");
+        System.out.println("\n=== TEST 4: Department update ===");
         department = DepartmentDao.findById(6);
         department.setName("TESTEMOD");
         DepartmentDao.update(department);
         System.out.println("Update completed");
+
+        System.out.println("\n=== TEST 5: Department findAll ===");
+        List<Department> list = DepartmentDao.findAll();
+        for ( Department obj : list) {
+            System.out.println(obj);
+        }
 
 
 
